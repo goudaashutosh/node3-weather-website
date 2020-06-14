@@ -9,7 +9,7 @@ formEle.addEventListener('submit', (e) => {
     locationDetails.textContent='Loading..'
     forecast.textContent=''
     e.preventDefault()
-    fetch('http://localhost:3000/weather?address=' + inputEle.value).then((response) => {
+    fetch('/weather?address=' + inputEle.value).then((response) => {
 
         response.json().then((data) => {
             if (data.error) {

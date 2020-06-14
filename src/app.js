@@ -4,6 +4,7 @@ const hbs = require('hbs')
 const geoLocationDetails=require('./utils/geoLocationDetails')
 const geoforecast=require('./utils/geoforecast')
 const app = express()
+const port= process.env.PORT||3000
 
 console.log(path.join(__dirname, '../public'))
 //console.log(__filename)
@@ -55,7 +56,7 @@ app.get('*', (req, res) => {
     res.render('404', { title: '404', errorMsg: 'Page not found', name: 'Ashutosh' })
 })
 
-app.listen(3000, () => {
-    console.log('Server is Up now.')
+app.listen(port, () => {
+    console.log('Server is Up now.'+port)
 })
 
